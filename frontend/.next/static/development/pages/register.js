@@ -12124,7 +12124,7 @@ var Register = function Register() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /*!************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fregister&absolutePagePath=%2FUsers%2Fdevesh%2FDesktop%2Fprojects%2FtechForum%2Ffrontend%2Fpages%2Fregister.js ***!
   \************************************************************************************************************************************************************/
@@ -12147,5 +12147,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[3,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=register.js.map
