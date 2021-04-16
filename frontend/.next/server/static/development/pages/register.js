@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -250,14 +250,42 @@ const Layout = ({
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./helpers/alerts.js":
+/*!***************************!*\
+  !*** ./helpers/alerts.js ***!
+  \***************************/
+/*! exports provided: showSuccessMessage, showErrorMessage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showSuccessMessage", function() { return showSuccessMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showErrorMessage", function() { return showErrorMessage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/devesh/Desktop/projects/techForum/frontend/helpers/alerts.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+const showSuccessMessage = success => {
+  __jsx("div", {
+    className: "alert alert-success",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 2
+    },
+    __self: undefined
+  }, success);
+};
+const showErrorMessage = error => {
+  __jsx("div", {
+    className: "alert alert-error",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }, error);
+};
 
 /***/ }),
 
@@ -2177,15 +2205,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-
+/* harmony import */ var _helpers_alerts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../helpers/alerts */ "./helpers/alerts.js");
 
 
 
@@ -2195,11 +2221,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/devesh/Desktop/projects/techForum/frontend/pages/register.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
+
 
 
 
@@ -2209,10 +2236,10 @@ const Register = () => {
   const {
     0: state,
     1: setState
-  } = Object(react__WEBPACK_IMPORTED_MODULE_8__["useState"])({
-    name: '',
-    email: '',
-    password: '',
+  } = Object(react__WEBPACK_IMPORTED_MODULE_7__["useState"])({
+    name: 'devesh',
+    email: 'devesh@gmail.com',
+    password: 'rrrrrr',
     error: '',
     success: '',
     buttonText: 'Register'
@@ -2237,25 +2264,44 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setState(_objectSpread({}, state, {
+      buttonText: 'Registering'
+    })); // console.table({ name, email, password });
+
     axios__WEBPACK_IMPORTED_MODULE_9___default.a.post(`http://localhost:8000/api/register`, {
       name,
       email,
       password
-    }).then(res => console.log(res)).catch(err => console.error(err));
+    }).then(response => {
+      console.log(response);
+      setState(_objectSpread({}, state, {
+        name: '',
+        email: '',
+        password: '',
+        buttonText: 'Submitted',
+        success: response.data.message
+      }));
+    }).catch(error => {
+      console.log(error);
+      setState(_objectSpread({}, state, {
+        buttonText: 'Register',
+        error: error.response.data.error
+      }));
+    });
   };
 
   const registerForm = () => __jsx("form", {
     onSubmit: handleSubmit,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 60
     },
     __self: undefined
   }, __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 61
     },
     __self: undefined
   }, __jsx("input", {
@@ -2266,14 +2312,14 @@ const Register = () => {
     placeholder: "Type your name",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 62
     },
     __self: undefined
   })), __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 70
     },
     __self: undefined
   }, __jsx("input", {
@@ -2284,14 +2330,14 @@ const Register = () => {
     placeholder: "Type your email",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 71
     },
     __self: undefined
   })), __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 79
     },
     __self: undefined
   }, __jsx("input", {
@@ -2302,64 +2348,58 @@ const Register = () => {
     placeholder: "Type your password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 80
     },
     __self: undefined
   })), __jsx("div", {
     className: "form-group",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx("button", {
     className: "btn btn-outline-warning",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 89
     },
     __self: undefined
   }, buttonText)));
 
-  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75
+      lineNumber: 95
     },
     __self: undefined
   }, __jsx("div", {
     className: "col-md-6 offset-md-3",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 96
     },
     __self: undefined
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 97
     },
     __self: undefined
   }, "Register"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 98
     },
     __self: undefined
-  }), registerForm(), __jsx("hr", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: undefined
-  }), _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_6___default()(state)));
+  }), success && Object(_helpers_alerts__WEBPACK_IMPORTED_MODULE_10__["showSuccessMessage"])(success), error && Object(_helpers_alerts__WEBPACK_IMPORTED_MODULE_10__["showErrorMessage"])(error), registerForm()));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Register);
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*********************************!*\
   !*** multi ./pages/register.js ***!
   \*********************************/
@@ -2379,17 +2419,6 @@ module.exports = __webpack_require__(/*! /Users/devesh/Desktop/projects/techForu
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
-
-/***/ }),
-
-/***/ "core-js/library/fn/json/stringify":
-/*!****************************************************!*\
-  !*** external "core-js/library/fn/json/stringify" ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 
