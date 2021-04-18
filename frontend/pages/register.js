@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Layout from '../components/Layout';
 import axios from 'axios';
 import { showSuccessMessage, showErrorMessage } from '../helpers/alerts';
+import {API} from '../config'
 
 const Register = () => {
   const [state, setState] = useState({
@@ -25,12 +26,12 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (async = (e) => {
+  const handleSubmit = (async (e) => {
     e.preventDefault();
     setState({ ...state, buttonText: 'Registering' });
     try {
       const response = await axios
-        .post(`http://localhost:8000/api/register`, {
+        .post(`${API}/register`, {
           name,
           email,
           password,
