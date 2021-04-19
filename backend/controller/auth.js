@@ -50,3 +50,69 @@ exports.register = (req, res) => {
       });
   });
 };
+
+exports.registerActivate = (req, res) => {
+  const { token } = req.body;
+  // console.log(token);
+  jwt.verify(
+    token,
+    process.env.JWT_ACCOUNT_ACTIVATION,
+    function (err, decoded) {
+      if (err) {
+        return res.status(401).json({
+          error: 'Expired link. Try again',
+        });
+      }
+
+      const { name, email, password } = jwt.decode(token);
+      const username = shortId.generate();
+
+      const user = User.findOne({ email });
+      if (user) {
+        return res.status(401).json({
+          error: 'Email is taken',
+        });
+      }
+
+      // register new user
+      const newUser = new User({ username, name, email, password });
+      newUser.save((err, result) => {
+        if (err) {
+          return res.status(401).json({
+            error: 'Error saving user in database. Try later',
+          });
+        }
+        return res.json({
+          message: 'Registration success. Please login.',
+        });
+      });
+    }
+  );
+};
+
+exports.login = (req, res) => {
+  const { email, password } = req.body;
+  // console.table({ email, password });
+  const user = User.findOne({ email });
+  if (err || !user) {
+    return res.status(400).json({
+      error: 'User with that email does not exist. Please register.',
+    });
+  }
+  // authenticate
+  if (!user.authenticate(password)) {
+    return res.status(400).json({
+      error: 'Email and password do not match',
+    });
+  }
+  // generate token and send to client
+  const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+    expiresIn: '7d',
+  });
+  const { _id, name, email, role } = user;
+
+  return res.json({
+    token,
+    user: { _id, name, email, role },
+  });
+};

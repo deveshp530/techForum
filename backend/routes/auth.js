@@ -1,11 +1,16 @@
-const express = require('express')
-const router = new express.Router()
+const express = require('express');
+const router = express.Router();
 
-const { userValidator } = require('../validators/auth')
-const { runValidation } =  require('../validators')
+// import validators
+const { userRegisterValidator,userLoginValidator } = require('../validators/auth');
+const { runValidation } = require('../validators');
 
-const {register} = require('../controller/auth')
+// import from controllers
+const { register, registerActivate,login } = require('../controller/auth');
 
-router.post('/register',userValidator,runValidation, register)
+router.post('/register', userRegisterValidator, runValidation, register);
+router.post('/register/activate', registerActivate);
+router.post('/login', userLoginValidator, runValidation, login);
 
-module.exports = router
+
+module.exports = router;

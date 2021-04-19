@@ -24,7 +24,6 @@ app.use(bodyParser.json());
 app.use(cors({ origin: process.env.CLIENT_URL }));
 
 const authRoute = require('./routes/auth');
-
 const port = process.env.PORT || 8000;
 
 app.use('/api', authRoute);
