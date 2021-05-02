@@ -6,6 +6,8 @@ import axios from 'axios';
 import { showSuccessMessage, showErrorMessage } from '../helpers/alerts';
 import { API } from '../config';
 
+import { authenticate, isAuth } from '../helpers/auth';
+
 const Login = () => {
   const [state, setState] = useState({
     email: 'ryan@gmail.com',
@@ -14,6 +16,10 @@ const Login = () => {
     success: '',
     buttonText: 'Login',
   });
+
+  useEffect(() => {
+    isAuth() && Router.push('/');
+  }, []);
 
   const { email, password, error, success, buttonText } = state;
 
@@ -35,7 +41,11 @@ const Login = () => {
         email,
         password,
       });
-      console.log(response);
+      authenticate(response, () =>
+        isAuth() && isAuth.role == 'admin'
+          ? Router.push('/admin')
+          : Router.push('/admin')
+      );
     } catch (error) {
       console.log(error);
       setState({
@@ -78,6 +88,7 @@ const Login = () => {
     <Layout>
       <div className="col-md-6 offset-md-3">
         <h1>Login</h1>
+        {JSON.stringify(isAuth())}
         <br />
         {success && showSuccessMessage(success)}
         {error && showErrorMessage(error)}
